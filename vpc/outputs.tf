@@ -7,15 +7,15 @@ output "vpc_id" {
 }
 
 output "public_subnets_ids" {
-  value = "${aws_subnet.pub_subnets.*.id}"
+  value = "${aws_subnet.pub_vpc_subnets.*.id}"
 }
 
 output "application_subnets_ids" {
-  value = "${aws_subnet.app_subnets.*.id}"
+  value = "${aws_subnet.app_vpc_subnets.*.id}"
 }
 
 output "storage_subnets_ids" {
-  value = "${aws_subnet.stor_subnets.*.id}"
+  value = "${aws_subnet.stor_vpc_subnets.*.id}"
 }
 
 output "internetgw_id" {
