@@ -26,12 +26,12 @@ variable "azs" {
 ##
 ## Default settings
 
-variable "enable_dns_support" {
-  default = true
+variable "use_dns_support" {
+  default = "true"
 }
 
-variable "enable_dns_hostnames" {
-  default = true
+variable "use_dns_hostnames" {
+  default = "true"
 }
 
 variable "instance_tenancy" {
@@ -45,7 +45,7 @@ variable "instance_tenancy" {
 data "aws_availability_zones" "available" {}
 
 data "external" "cidrs" {
-  program = ["./vpc_subnets_terraform.sh", "--cidr ${var.cidr}", "--azs ${local.azs_count}"]
+  program = ["${path.module}/vpc_subnets_terraform.sh", "--cidr ${var.cidr}", "--azs ${local.azs_count}"]
 }
 
 ################################################################################
