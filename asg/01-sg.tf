@@ -18,4 +18,3 @@ resource "aws_security_group" "app_sg" {
 	Name = "${format("%s-sg", var.app_name)}"
     }
 }
-xs
