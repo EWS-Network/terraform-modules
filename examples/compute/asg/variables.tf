@@ -1,4 +1,8 @@
 
+
+variable "vpc_name" {
+}
+
 ## AMI
 
 data "aws_ami" "centos" {

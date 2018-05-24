@@ -7,7 +7,12 @@ variable "region" {
 }
 
 variable "vpc_id" {
-    default = ""
+}
+
+variable "subnets_ids"{
+}
+
+variable "ami_id" {
 }
 
 variable "env" {
@@ -29,6 +34,7 @@ variable "app_name" {
 variable "user_data" {
     default = ""
 }
+
 
 ################################################################################
 ##

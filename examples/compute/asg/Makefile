@@ -5,7 +5,7 @@
 ## Login   <john@epitech.net>
 ##
 ## Started on  Wed May 23 10:30:46 2018 John Mille
-## Last update Wed May 23 16:40:19 2018 John Mille
+## Last update Thu May 24 12:50:15 2018 John Mille
 ##
 
 # http://clarkgrubb.com/makefile-style-guide
@@ -19,7 +19,7 @@ SHELL := bash
 
 REGION=eu-west-1
 ENVTYPE=dev
-STACK=vpc-test
+STACK=asg-test
 TFSTATE_BUCKET=$(shell whoami)-${ENVTYPE}-tfstate
 
 export AWS_DEFAULT_REGION=$(REGION)

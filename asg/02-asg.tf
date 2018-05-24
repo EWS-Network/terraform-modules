@@ -28,7 +28,7 @@ resource "aws_launch_configuration" "app_lc" {
 }
 
 resource "aws_autoscaling_group" "app_asg" {
-    availability_zones   = ["${data.aws_availability_zones.available.names}"]
+
     desired_capacity     = 1
     max_size             = 1
     min_size             = 1
@@ -56,12 +56,6 @@ resource "aws_autoscaling_group" "app_asg" {
     tag {
 	key                 = "Usage"
 	value               = "App"
-	propagate_at_launch = true
-    }
-
-    tag {
-	key                 = "VPCName"
-	value               = "${var.vpc_name}"
 	propagate_at_launch = true
     }
 
