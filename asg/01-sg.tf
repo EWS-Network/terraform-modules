@@ -15,6 +15,7 @@ resource "aws_security_group" "app_sg" {
     }
 
     tags {
-	Name = "$(format("%s-sg", var.app_name))"
+	Name = "${format("%s-sg", var.app_name)}"
     }
 }
+xs
