@@ -40,26 +40,6 @@ locals {
 
 ################################################################################
 ##
-## Data
-
-
-data "aws_vpc" "root" {
-  tags {
-    Name = "${var.vpc_name}"
-  }
-}
-
-data "aws_subnet_ids" "app" {
-  vpc_id = "${data.aws_vpc.root.id}"
-
-  tags {
-    Usage = "Public"
-  }
-}
-
-
-################################################################################
-##
 ## Provider
 
 provider "aws" {
