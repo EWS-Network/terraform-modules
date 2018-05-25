@@ -1,3 +1,10 @@
+provider "aws" {
+  region = "${var.region}"
+}
+
+variable "region" {
+    default = "eu-west-1"
+}
 
 
 variable "vpc_name" {
@@ -104,4 +111,8 @@ data "template_cloudinit_config" "config" {
     content_type = "text/cloud-config"
     content      = "${data.template_file.ansible_config.rendered}"
   }
+}
+
+locals {
+  ansible_vars_file_path = "/var/tmp/cf_vars.yml"
 }

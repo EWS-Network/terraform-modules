@@ -10,7 +10,7 @@ resource "aws_iam_role" "role" {
     assume_role_policy = "${file("${path.module}/files/iam_ec2_assume.json")}"
 }
 
-resource "aws_launch_configuration" "app_lc" {
+resource "aws_launch_configuration" "lc" {
 
     image_id      = "${var.ami_id}"
     instance_type = "${var.instance_type}"
@@ -27,14 +27,14 @@ resource "aws_launch_configuration" "app_lc" {
     }
 }
 
-resource "aws_autoscaling_group" "app_asg" {
+resource "aws_autoscaling_group" "asg" {
 
     desired_capacity     = 1
     max_size             = 1
     min_size             = 1
-    launch_configuration = "${aws_launch_configuration.app_lc.name}"
+    launch_configuration = "${aws_launch_configuration.lc.name}"
 
-    vpc_zone_identifier = "${var.subnets_ids}"
+    vpc_zone_identifier = ["${var.subnets_ids}"]
 
     tag {
 	key                 = "Name"

@@ -1,8 +1,8 @@
 
 output "asg_id" {
-    value = "${aws_autoscaling_group.app_asg.id}"
+    value = "${aws_autoscaling_group.asg.id}"
 }
 
 output "lc_name" {
-    value = "${aws_launch_configuration.app_lc.name}"
+    value = "${aws_launch_configuration.lc.name}"
 }

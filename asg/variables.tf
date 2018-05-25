@@ -10,6 +10,7 @@ variable "vpc_id" {
 }
 
 variable "subnets_ids"{
+    default = []
 }
 
 variable "ami_id" {
@@ -41,7 +42,6 @@ variable "user_data" {
 ## locals
 
 locals {
-  ansible_vars_file_path = "/var/tmp/cf_vars.yml"
 }
 
 ################################################################################
